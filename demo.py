@@ -15,7 +15,7 @@ import os
 logging.basicConfig(level=logging.DEBUG)
 
 from django.conf import settings
-from django.conf.urls import url
+from django.urls import path
 from django.core.wsgi import get_wsgi_application
 from django.utils.timezone import now as tznow
 
@@ -73,7 +73,7 @@ class DemoPDFView(PDFTemplateView):
 
 
 urlpatterns = [
-    url(r'^$', DemoPDFView.as_view())
+    path('', DemoPDFView.as_view())
 ]
 
 application = get_wsgi_application()
